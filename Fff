@@ -1,0 +1,9 @@
+public native_get_class_name(classid, szName[], len) {
+	if(classid < 0 || classid >= g_iZClasses)
+		return;
+
+	new szClassName[32];
+	ArrayGetString( g_zclass_name, classid, szClassName, charsmax(szClassName));
+	param_convert( 2 );
+	formatex( szName, len, szClassName );
+}
